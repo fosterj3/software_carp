@@ -1,0 +1,32 @@
+---
+title: "software carpentry workshop R tutorial"
+author: "Lamar Foster"
+date: "5/12/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#download data from url
+download.file(url = "https://ndownloader.figshare.com/files/2292169",
+              destfile = "portal_data_joined.csv")
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+#Read in the data and save it in global environment
+surveys <- read_csv("portal_data_joined.csv")
+```
+
+```{r}
+#Examine the data 
+head(surveys)
+tail(surveys)
+```
+
